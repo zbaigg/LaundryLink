@@ -1,7 +1,24 @@
 import React, { useState } from 'react';
+// import DateTimePicker from 'react-datetime-picker';
+// import { format, addMinutes } from 'date-fns'; // Importing necessary functions from date-fns
 
 function Slots() {
     const availableSlots = ['Available Slot 1', 'Available Slot 2', 'Available Slot 3'];
+    // const availableSlots = [
+    //     new Date(2023, 6, 23, 10, 0, 0), // July 23, 2023, 10:00 AM
+    //     new Date(2023, 6, 24, 14, 30, 0), // July 24, 2023, 2:30 PM
+    //     new Date(2023, 6, 25, 18, 45, 0), // July 25, 2023, 6:45 PM
+    //     new Date(2023, 6, 26, 9, 15, 0),  // July 26, 2023, 9:15 AM
+    //     new Date(2023, 6, 27, 20, 0, 0),  // July 27, 2023, 8:00 PM
+    //   ];
+
+ 
+  // Generate arbitrary time slots for the next 5 days
+    // const availableSlots = Array.from({ length: 15 }, (_, index) => {
+    //     const startDate = new Date(); // Start with the current date and time
+    //     return addMinutes(startDate, index * 30); // Add 30 minutes to each subsequent slot
+    // });
+    
     const [checkedSlots, setCheckedSlots] = useState([]); //checkedSlots -> which slots have user checked, setCheckedSlots -> update checkedSlots value
     const [displaySlots, setDisplaySlots] = useState(false); // State to control when to display slots
     const [selectionConfirmed, setIsSelectionConfirmed] = useState(false); // New state to track if Confirm button is clicked
@@ -59,17 +76,15 @@ return (
                             </label>
                         </li>
                     ))}
-                    {/*how do i display/print the items stored in a state variable array */}
-                    {/*{checkedSlots.map((prebookedSlots, index) => (
-                    <li key={index}>{prebookedSlots}</li>*/}
-                    {/*but i only wanna display when a specific button is clicked*/}
-                    {/*))}*/}
                 </ul>
-                <input 
-                    type='text'
-                    value={nameInput}
-                    onChange={nameInputHandling} 
-                />
+                <div className="input-container">
+                    <label htmlFor="nameInput">Enter your name:</label>
+                    <input 
+                        type='text'
+                        value={nameInput}
+                        onChange={nameInputHandling} 
+                    />
+                </div>
 
                 <button onClick={ConfirmHandling}>Confirm</button> {/*I want to print/display the checkmarked items/items in the checkedSlots state variable after the Booked Slots button is clicked*/}
                 {showConfirmationMessage && <p>Booking for {nameInput} has been confirmed!</p>}
@@ -80,7 +95,6 @@ return (
             
             selectionConfirmed && (
                 <ul className="no-bullets">
-
                     {checkedSlots.map((prebookedSlots, index) => (
                         <li key={index}>{prebookedSlots} (Booked by: {nameInput})</li>
                         // {/*but i only wanna display when a specific button is clicked - Done*/}

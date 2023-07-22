@@ -1,4 +1,17 @@
 
+
+/* Assuming you have a CSS file linked to your component or a style tag within your component */
+.input-container {
+  margin-top: 10px; /* Add margin space at the top */
+}
+
+button {
+  margin-top: 20px; /* Add margin space at the top */
+}
+
+
+
+
 .App-container {
   display: flex;
   flex-direction: column;
@@ -73,3 +86,4 @@ input[type="checkbox"] {
     transform: rotate(360deg);
   }
 }
+
