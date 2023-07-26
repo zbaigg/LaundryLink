@@ -1,0 +1,21 @@
+/* Add your desired styles for the NavBar here */
+.navbar {
+    background-color: #A9A9A9;
+    color: #000000;
+    padding: 10px;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .nav-item {
+    margin-right: 40px;
+  }
+  
+  .nav-link {
+    color: #000000; /* Change the color to black */
+    text-decoration: none;
+  }

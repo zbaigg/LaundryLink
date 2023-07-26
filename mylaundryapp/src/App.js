@@ -4,9 +4,10 @@ import Slots from './components/Slots';
 import './App.css';
 import ContactMe from './components/Contact';
 import About from './components/About';
+import NavigationBar from './components/NavBar';
+import './NavBar.css'; 
 
 
-// import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+        <NavigationBar />
           <div className="App-button-display">
             <Switch>
                 <Route exact path="/">
